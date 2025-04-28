@@ -27,3 +27,10 @@ def count_bases(sequence):
     
     return counts
 
+# 3. Ritar en stapeldiagrammet.
+def plot_bases(counts, sequence_name):
+    plt.bar(counts.keys(), counts.values(), color=['blue', 'red', 'green', 'yellow'])
+    plt.xlabel("DNA-bas")
+    plt.ylabel("Antal")
+    plt.title(f"DNA-sekvens: {sequence_name}")
+    plt.show()
