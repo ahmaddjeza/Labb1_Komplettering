@@ -17,3 +17,13 @@ def read_dna_file(filename):
     
     return sequences
 
+# 2. Räknar hur många A, T, C, G det finns i en sekvens
+def count_bases(sequence):
+    counts = {'A': 0, 'T': 0, 'C': 0, 'G': 0}
+    
+    for base in sequence:
+        if base in counts:  # Kontrollerar att det är en giltig bokstav.
+            counts[base] += 1
+    
+    return counts
+
