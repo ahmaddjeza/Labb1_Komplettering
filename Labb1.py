@@ -34,3 +34,25 @@ def plot_bases(counts, sequence_name):
     plt.ylabel("Antal")
     plt.title(f"DNA-sekvens: {sequence_name}")
     plt.show()
+
+# Huvudprogrammet
+def main():
+    filename = 'dna_raw.txt'  # Filnamnet
+    
+    # Steg 1: Läs filen
+    sequences = read_dna_file(filename)
+    
+    # Steg 2: Analysera varje sekvens
+    for name, sequence in sequences.items():
+        print(f"\nSekvens: {name}")
+        
+        # Räkna bokstäverna
+        base_counts = count_bases(sequence)
+        print("Antal Bokstäver:", base_counts)
+        
+        # Rita diagram
+        plot_bases(base_counts, name)
+
+# Kör programmet
+if __name__ == "__main__":
+    main() 
